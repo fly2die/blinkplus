@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "blinkplus:item/blink_dagger"
+  },
+  "components": {
+    "minecraft:interact_animation": {
+      "type": "whack",
+      "duration": 6
+    }
+  }
+}

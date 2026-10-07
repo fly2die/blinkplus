@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "  P",
+    " EP",
+    "BG "
+  ],
+  "key": {
+    "P": "minecraft:prismarine_shard",
+    "E": "minecraft:ender_eye",
+    "B": "minecraft:breeze_rod",
+    "G": "minecraft:glow_ink_sac"
+  },
+  "result": {
+    "id": "blinkplus:blink_dagger",
+    "count": 1
+  }
+}

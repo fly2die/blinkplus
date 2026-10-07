@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "  Q",
+    " BQ",
+    "VT "
+  ],
+  "key": {
+    "Q": "minecraft:quartz",
+    "B": "blinkplus:blink_dagger",
+    "V": "minecraft:breeze_rod",
+    "T": "minecraft:ghast_tear"
+  },
+  "result": {
+    "id": "blinkplus:arcane_blink",
+    "count": 1
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "blink_dagger": {
+    "subtitle": "subtitles.blinkplus.blink_dagger",
+    "sounds": ["blinkplus:blink_dagger"]
+  },
+  "arcane_blink": {
+    "subtitle": "subtitles.blinkplus.arcane_blink",
+    "sounds": ["blinkplus:arcane_blink"]
+  },
+  "swift_blink": {
+    "subtitle": "subtitles.blinkplus.swift_blink",
+    "sounds": ["blinkplus:swift_blink"]
+  },
+  "overwhelming_blink": {
+    "subtitle": "subtitles.blinkplus.overwhelming_blink",
+    "sounds": ["blinkplus:overwhelming_blink"]
+  }
+}

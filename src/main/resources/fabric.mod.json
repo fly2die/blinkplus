@@ -1,0 +1,38 @@
+{
+	"schemaVersion": 1,
+	"id": "blinkplus",
+	"version": "${1.0.0}",
+	"name": "Blink+",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"F2D"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/blinkplus/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.f2d.blinkplus.Blink"
+		],
+		"client": [
+			"com.f2d.blinkplus.client.BlinkClient"
+		]
+	},
+	"mixins": [
+		"blinkplus.mixins.json",
+		{
+			"config": "blinkplus.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.5",
+		"minecraft": "~26.3",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}

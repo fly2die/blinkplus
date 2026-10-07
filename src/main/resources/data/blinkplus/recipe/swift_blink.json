@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "  E",
+    " BE",
+    "FR "
+  ],
+  "key": {
+    "E": "minecraft:emerald",
+    "B": "blinkplus:blink_dagger",
+    "F": "minecraft:blaze_rod",
+    "R": "minecraft:rabbit_foot"
+  },
+  "result": {
+    "id": "blinkplus:swift_blink",
+    "count": 1
+  }
+}

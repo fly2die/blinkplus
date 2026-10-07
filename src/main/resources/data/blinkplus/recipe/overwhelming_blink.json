@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "  P",
+    " BP",
+    "FC "
+  ],
+  "key": {
+    "P": "minecraft:blaze_powder",
+    "B": "blinkplus:blink_dagger",
+    "F": "minecraft:blaze_rod",
+    "C": "minecraft:fire_charge"
+  },
+  "result": {
+    "id": "blinkplus:overwhelming_blink",
+    "count": 1
+  }
+}
