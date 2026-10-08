@@ -3,15 +3,15 @@
 	"id": "blinkplus",
 	"version": "${version}",
 	"name": "Blink+",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Items that change how you move through the world! A new way to travel, explore, attack, and retreat from a fight — all in the style of vanilla Minecraft.",
 	"authors": [
-		"F2D"
+		"FLY2DIE"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://modrinth.com/user/FLY2DIE",
+		"sources": "https://github.com/fly2die/blinkplus"
 	},
-	"license": "CC0-1.0",
+	"license": "MIT",
 	"icon": "assets/blinkplus/icon.png",
 	"environment": "*",
 	"entrypoints": {

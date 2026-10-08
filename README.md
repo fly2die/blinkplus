@@ -1,7 +1,6 @@
-# Blink+
-
-## Setup
-For setup instructions, please see the [Fabric Documentation page](https://docs.fabricmc.net/develop/getting-started/creating-a-project#setting-up) related to the IDE that you are using.
+## Blink+
+Items that change how you move through the world!
+A new way to travel, explore, attack, and retreat from a fight — all in the style of vanilla Minecraft.
 
 ## License
 MIT License
