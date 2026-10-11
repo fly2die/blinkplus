@@ -46,6 +46,12 @@ public class BlinkDaggerItem extends Item {
         LAST_DAMAGE_TIME.put(player.getUUID(), player.level().getGameTime());
     }
 
+    /** Вызывается при выходе игрока с сервера, чтобы карты не росли бесконечно. */
+    public static void clearPlayer(UUID playerId) {
+        LAST_DAMAGE_TIME.remove(playerId);
+        LAST_GLOBAL_USE.remove(playerId);
+    }
+
     private static boolean isDamageLocked(Player player) {
         Long lastDamage = LAST_DAMAGE_TIME.get(player.getUUID());
         if (lastDamage == null) return false;

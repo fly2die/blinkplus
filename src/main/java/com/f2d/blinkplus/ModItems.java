@@ -10,36 +10,29 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Rarity;
 
+import java.util.function.Function;
+
 public class ModItems {
 
-    public static final Item BLINK_DAGGER = register(
-            "blink_dagger",
-            BlinkDaggerItem::new,
-            new Item.Properties().stacksTo(1).rarity(Rarity.EPIC)
-    );
+    public static final Item BLINK_DAGGER =
+            register("blink_dagger", BlinkDaggerItem::new);
 
-    public static final Item SWIFT_BLINK = register(
-            "swift_blink",
-            SwiftBlinkItem::new,
-            new Item.Properties().stacksTo(1).rarity(Rarity.EPIC)
-    );
+    public static final Item SWIFT_BLINK =
+            register("swift_blink", SwiftBlinkItem::new);
 
-    public static final Item OVERWHELMING_BLINK = register(
-            "overwhelming_blink",
-            OverwhelmingBlinkItem::new,
-            new Item.Properties().stacksTo(1).rarity(Rarity.EPIC)
-    );
+    public static final Item OVERWHELMING_BLINK =
+            register("overwhelming_blink", OverwhelmingBlinkItem::new);
 
-    public static final Item ARCANE_BLINK = register(
-            "arcane_blink",
-            ArcaneBlinkItem::new,
-            new Item.Properties().stacksTo(1).rarity(Rarity.EPIC)
-    );
+    public static final Item ARCANE_BLINK =
+            register("arcane_blink", ArcaneBlinkItem::new);
 
-    private static Item register(String name, java.util.function.Function<Item.Properties, Item> factory, Item.Properties settings) {
+    private static Item register(String name, Function<Item.Properties, Item> factory) {
         ResourceKey<Item> key = ResourceKey.create(Registries.ITEM, Blink.id(name));
-        Item item = factory.apply(settings.setId(key));
-        return Registry.register(BuiltInRegistries.ITEM, key, item);
+        Item.Properties properties = new Item.Properties()
+                .stacksTo(1)
+                .rarity(Rarity.EPIC)
+                .setId(key);
+        return Registry.register(BuiltInRegistries.ITEM, key, factory.apply(properties));
     }
 
     public static void initialize() {

@@ -4,9 +4,11 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
+import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.Identifier;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -17,46 +19,53 @@ public class Blink implements ModInitializer {
 	public static final String MOD_ID = "blinkplus";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
+	/** Как часто обновляется превью цели, в тиках (20 тиков = 1 секунда). */
+	private static final int PREVIEW_INTERVAL_TICKS = 4;
+
 	@Override
 	public void onInitialize() {
-		LOGGER.info("Hello Fabric world!");
+		LOGGER.info("Blink+ loaded");
+
 		ModItems.initialize();
 		ModParticles.initialize();
 		ModSounds.initialize();
 
-		// Регистрируем пакет для частиц
+		// Пакет для отрисовки частиц блинка на клиенте
 		PayloadTypeRegistry.clientboundPlay().register(BlinkPayload.ID, BlinkPayload.CODEC);
 
-		// Регистрируем событие урона (для блокировки блинка)
+		// Блокировка блинка после полученного урона
 		ServerLivingEntityEvents.AFTER_DAMAGE.register((entity, source, baseDamage, damageTaken, blocked) -> {
 			if (entity instanceof Player player) {
 				BlinkDaggerItem.onPlayerDamaged(player);
 			}
 		});
 
-		// Регистрируем тикер сервера (для превью частиц)
-		ServerTickEvents.END_SERVER_TICK.register(server -> {
-			for (ServerPlayer player : server.getPlayerList().getPlayers()) {
-				ItemStack mainHand = player.getMainHandItem();
+		// Иначе статические карты копят записи об игроках, которые давно вышли
+		ServerPlayConnectionEvents.DISCONNECT.register((handler, server) ->
+				BlinkDaggerItem.clearPlayer(handler.getPlayer().getUUID()));
 
-				// Проверяем, что в руке именно Блинк (любой из четырёх)
-				if (mainHand.getItem() instanceof BlinkDaggerItem blinkItem) {
+		ServerTickEvents.END_SERVER_TICK.register(Blink::tickPreview);
+	}
 
-					// Проверяем, что предмет НЕ на кулдауне
-					if (player.getCooldowns().isOnCooldown(mainHand)) {
-						continue;
-					}
+	/**
+	 * Показывает игроку, куда его перенесёт блинк в руке.
+	 * Отправляем не каждый тик, иначе на каждого игрока уходит 20 пакетов в секунду.
+	 */
+	private static void tickPreview(MinecraftServer server) {
+		if (server.getTickCount() % PREVIEW_INTERVAL_TICKS != 0) return;
 
-					// Вызываем метод через экземпляр (нестатический)
-					BlockPos safePos = blinkItem.findSafeTeleportPos(player, player.level());
+		for (ServerPlayer player : server.getPlayerList().getPlayers()) {
+			ItemStack mainHand = player.getMainHandItem();
 
-					// Отправляем пакет с двумя одинаковыми точками (для превью)
-					if (safePos != null) {
-						ServerPlayNetworking.send(player, new BlinkPayload(safePos, safePos));
-					}
-				}
+			if (!(mainHand.getItem() instanceof BlinkDaggerItem blinkItem)) continue;
+			if (player.getCooldowns().isOnCooldown(mainHand)) continue;
+
+			BlockPos target = blinkItem.findSafeTeleportPos(player, player.level());
+			if (target != null) {
+				// Две одинаковые точки = превью цели, а не сам телепорт
+				ServerPlayNetworking.send(player, new BlinkPayload(target, target));
 			}
-		});
+		}
 	}
 
 	public static Identifier id(String path) {

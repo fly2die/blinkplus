@@ -11,7 +11,6 @@ public class ModSounds {
     public static final SoundEvent SWIFT_BLINK = register("swift_blink");
     public static final SoundEvent OVERWHELMING_BLINK = register("overwhelming_blink");
 
-
     private static SoundEvent register(String name) {
         return Registry.register(
                 BuiltInRegistries.SOUND_EVENT,
@@ -20,6 +19,10 @@ public class ModSounds {
         );
     }
 
+    /**
+     * Метод намеренно пустой: звуки регистрируются в статических полях выше,
+     * а вызов метода гарантирует загрузку класса до заморозки реестров.
+     */
     public static void initialize() {
     }
 }

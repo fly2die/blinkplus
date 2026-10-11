@@ -2,5 +2,10 @@
   "item.blinkplus.blink_dagger": "Клинок Мерцания",
   "item.blinkplus.swift_blink": "Стремительный Клинок",
   "item.blinkplus.overwhelming_blink": "Сокрушающий Клинок",
-  "item.blinkplus.arcane_blink": "Магический Клинок"
+  "item.blinkplus.arcane_blink": "Магический Клинок",
+
+  "subtitles.blinkplus.blink_dagger": "Мерцание",
+  "subtitles.blinkplus.swift_blink": "Стремительное мерцание",
+  "subtitles.blinkplus.overwhelming_blink": "Сокрушающее мерцание",
+  "subtitles.blinkplus.arcane_blink": "Магическое мерцание"
 }

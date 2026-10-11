@@ -38,9 +38,7 @@ public class BlinkClient implements ClientModInitializer {
 		});
 	}
 
-	private static void drawPreviewFrame(
-			net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking.Context context,
-			BlockPos pos) {
+	private static void drawPreviewFrame(ClientPlayNetworking.Context context, BlockPos pos) {
 		double centerX = pos.getX() + 0.5;
 		double centerY = pos.getY() + 0.1;
 		double centerZ = pos.getZ() + 0.5;
@@ -76,9 +74,7 @@ public class BlinkClient implements ClientModInitializer {
 		}
 	}
 
-	private static void spawnBlinkBurst(
-			net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking.Context context,
-			BlockPos pos) {
+	private static void spawnBlinkBurst(ClientPlayNetworking.Context context, BlockPos pos) {
 		double centerX = pos.getX() + 0.5;
 		double centerY = pos.getY() + 0.5;
 		double centerZ = pos.getZ() + 0.5;
