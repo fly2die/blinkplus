@@ -11,7 +11,7 @@
 		"homepage": "https://modrinth.com/user/FLY2DIE",
 		"sources": "https://github.com/fly2die/blinkplus"
 	},
-	"license": "MIT",
+	"license": "ARR",
 	"icon": "assets/blinkplus/icon.png",
 	"environment": "*",
 	"entrypoints": {
