@@ -1,34 +1,54 @@
+This mod adds four types of new tools for short-range teleportation. It fits perfectly into both "vanilla-style" modpacks and large-scale magic-themed packs. The concept was inspired by a popular MOBA game.
 
-# Blink+
+![line-1](https://cdn.modrinth.com/data/cached_images/203fb87b3b2415d957125a2e6c603075e8f3804e.png)
 
-Items that change how you move through the world!
-A new way to travel, explore, attack, and retreat from a fight — all in the style of vanilla Minecraft.
+-----------------------------------------------------------------------------------------------
 
-## ✨ Features
 
-### 🗡️ Blink Dagger
-A new item that can be crafted and used in-game. Once you have it in your inventory, it's yours to use however you like — simple, clean, and no extra clutter.
+![list](https://cdn.modrinth.com/data/cached_images/b84f2a86b2cfa5d63496d59d6406e52fdec0087c.png)
 
-## 📦 Installation
+![line-1](https://cdn.modrinth.com/data/cached_images/203fb87b3b2415d957125a2e6c603075e8f3804e.png)
 
-1. Install **Fabric Loader** version `0.19.5+` for Minecraft `26.3`.
-2. Download and place the following into your `mods` folder:
-   - [Fabric API](https://modrinth.com/mod/fabric-api) `0.160.5+26.3` or newer
-   - **Blink+** (this mod)
-3. Launch the game.
+Before using the item, the player can see the target block; the item enters a cooldown period after use.
 
-## ⚙️ Requirements
+For balance purposes, taking damage triggers a brief cooldown. Additionally, momentum (both vertical and horizontal) is preserved during teleportation—so you probably shouldn't use it like a water bucket XD. The items feature reasonably balanced crafting recipes, making them accessible during the mid-game.
 
-| Component | Version |
-|---|---|
-| Minecraft | 26.3 |
-| Fabric Loader | 0.19.5+ |
-| Fabric API | 0.160.5+26.3 |
-| Java | 25+ |
+![line-1](https://cdn.modrinth.com/data/cached_images/203fb87b3b2415d957125a2e6c603075e8f3804e.png)
 
-## 🛠️ Building from Source
+-----------------------------------------------------------------------------------------------
 
-```bash
-git clone <repository-url>
-cd blink-plus-26.3
-./gradlew build
+There are four types in total:
+
+-----------------------------------------------------------------------------------------------
+
+![line-1](https://cdn.modrinth.com/data/cached_images/203fb87b3b2415d957125a2e6c603075e8f3804e.png)
+
+**Blink Dagger** – the standard Blink; it can be upgraded into the other three variants.
+
+![Blink Dagger](https://cdn.modrinth.com/data/2NDFklnI/images/476290406ca597e62b0531ea141843dcc2df803f.gif)
+
+![line-1](https://cdn.modrinth.com/data/cached_images/203fb87b3b2415d957125a2e6c603075e8f3804e.png)
+
+**Overwhelming Blink** – deals damage within the teleportation radius.
+
+![Overwhelming Blink](https://cdn.modrinth.com/data/2NDFklnI/images/9a72d06e6c2751cc2920ff9170b223d3671e6fa8.gif)
+
+![line-1](https://cdn.modrinth.com/data/cached_images/203fb87b3b2415d957125a2e6c603075e8f3804e.png)
+
+**Swift Blink** – grants a temporary speed boost after teleporting.
+
+![Swift Blink](https://cdn.modrinth.com/data/2NDFklnI/images/0258efcc14dec5e81210b864fd12960946eeba74.gif)
+
+![line-1](https://cdn.modrinth.com/data/cached_images/203fb87b3b2415d957125a2e6c603075e8f3804e.png)
+
+**Arcane Blink** – restores 1 heart and offers increased teleportation range.
+
+![Arcane Blink](https://cdn.modrinth.com/data/2NDFklnI/images/b8c1a125c1f0289c2c033a7b92854142171641d1.gif)
+
+![line-1](https://cdn.modrinth.com/data/cached_images/203fb87b3b2415d957125a2e6c603075e8f3804e.png)
+
+RU/EN
+
+![line-2](https://cdn.modrinth.com/data/cached_images/0e583dcb8e43bcb034197abea17222a63361cbaa.png)
+
+[GITHUB](https://github.com/fly2die) - [BOOSTY](boosty.to/ragnar4) - [YOUTUBE](https://www.youtube.com/@FLY2DIE-F2D)
